@@ -16,7 +16,7 @@ class TestLightToggleControl:
         control = LightToggleControl(0, **settings)
         with mock_context(control) as ctx:
             control.initialize()
-            assert_rendered(ctx, TestingUtils.get_filename('../assets/font-awesome/lightbulb-solid.png'))
+            assert_rendered(ctx, TestingUtils.get_filename('../devdeck_home_assistant/assets/font-awesome/lightbulb-solid.png'))
 
     @vcr.use_cassette('tests/fixtures/test_light_toggle/test_initialize_sets_icon_off.yaml')
     def test_initialize_sets_icon_off(self):
@@ -28,4 +28,4 @@ class TestLightToggleControl:
         control = LightToggleControl(0, **settings)
         with mock_context(control) as ctx:
             control.initialize()
-            assert_rendered(ctx, TestingUtils.get_filename('../assets/font-awesome/lightbulb-regular.png'))
+            assert_rendered(ctx, TestingUtils.get_filename('../devdeck_home_assistant/assets/font-awesome/lightbulb-regular.png'))
