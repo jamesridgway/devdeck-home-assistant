@@ -3,6 +3,13 @@
 
 Home Assistant controls for [DevDeck](https://github.com/jamesridgway/devdeck).
 
+## Installing
+Simplify install *DevDeck - Home Assistant* into the same python environment that you have installed DevDeck.
+
+    pip install devdeck-home-assistant
+
+You can then update your DevDeck configuration to use decks and controls from this package.
+
 ## Controls
 
 * `SwitchToggleControl`
