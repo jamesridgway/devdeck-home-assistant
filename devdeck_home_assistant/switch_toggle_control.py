@@ -31,8 +31,8 @@ class SwitchToggleControl(DeckControl):
         data = r.json()
         with self.deck_context() as context:
             if data['state'] == 'on':
-                context.set_icon(
-                    os.path.join(os.path.dirname(__file__), "../assets/font-awesome", 'toggle-on-solid.png'))
+                with context.renderer() as r:
+                    r.image(os.path.join(os.path.dirname(__file__), "assets/font-awesome", 'toggle-on-solid.png')).end()
             else:
-                context.set_icon(
-                    os.path.join(os.path.dirname(__file__), "../assets/font-awesome", 'toggle-off-solid.png'))
+                with context.renderer() as r:
+                    r.image(os.path.join(os.path.dirname(__file__), "assets/font-awesome", 'toggle-off-solid.png')).end()

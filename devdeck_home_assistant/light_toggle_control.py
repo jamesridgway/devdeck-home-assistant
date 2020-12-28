@@ -32,8 +32,8 @@ class LightToggleControl(DeckControl):
         with self.deck_context() as context:
             if data['state'] == 'on':
                 with context.renderer() as r:
-                    r.image(os.path.join(os.path.dirname(__file__),"../assets/font-awesome", 'lightbulb-solid.png')).end()
+                    r.image(os.path.join(os.path.dirname(__file__), "assets/font-awesome", 'lightbulb-solid.png')).end()
             else:
                 with context.renderer() as r:
-                    r.image(os.path.join(os.path.dirname(__file__),"../assets/font-awesome", 'lightbulb-regular.png')).end()
+                    r.image(os.path.join(os.path.dirname(__file__), "assets/font-awesome", 'lightbulb-regular.png')).end()
 

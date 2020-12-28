@@ -24,5 +24,6 @@ setup(
     url='https://github.com/jamesridgway/devdeck-home-assistant',
     license='MIT',
     packages=find_packages(),
+    include_package_data=True,
     install_requires=install_reqs
 )
