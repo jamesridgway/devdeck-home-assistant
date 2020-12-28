@@ -40,7 +40,7 @@ Example configuration:
 You must have the API enabled by having an `api` entry in your home assistant configuration:
 
 ```
-api
+api:
 
 ```
 

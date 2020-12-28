@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer my_secret_api_key
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.25.1
+    method: GET
+    uri: https://homeassistant:8123/api/states/light.light1
+  response:
+    body:
+      string: !!binary |
+        eJyNUMtuwyAQ/BWLa5sIcPzA31Cpl94tYJcEycEWXqRGkf+9QNp7LyvN7sxqZp4MA3l6zB7Y1LDF
+        X290rlOw94btpAnLYXWuYE0UvUmEe14+mYmFGXAvUHZdZrjoMcDymIO+V+Wnc95i81GY9WXatjUS
+        wuxQU4r1lTjyZdE7zfamwxWrGcklPwl5kuMXHyfOJyHOnepVO7xlwDn706QNss1/a+waCL+pJnjF
+        toMZB61sfxHYXjph0fTWIHLVg7a6LapNx1zVq6eQliWv0o7xtzilJLYW2hGMAwEDSGGcHDoDFyNH
+        Bew4fgBzPGsL
+    headers:
+      Content-Encoding:
+      - deflate
+      Content-Length:
+      - '250'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 28 Dec 2020 09:22:40 GMT
+      Server:
+      - Python/3.8 aiohttp/3.7.1
+    status:
+      code: 200
+      message: OK
+version: 1

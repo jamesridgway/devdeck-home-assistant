@@ -31,8 +31,9 @@ class LightToggleControl(DeckControl):
         data = r.json()
         with self.deck_context() as context:
             if data['state'] == 'on':
-                context.set_icon(
-                    os.path.join(os.path.dirname(__file__), "../assets/font-awesome", 'lightbulb-solid.png'))
+                with context.renderer() as r:
+                    r.image(os.path.join(os.path.dirname(__file__),"../assets/font-awesome", 'lightbulb-solid.png')).end()
             else:
-                context.set_icon(
-                    os.path.join(os.path.dirname(__file__), "../assets/font-awesome", 'lightbulb-regular.png'))
+                with context.renderer() as r:
+                    r.image(os.path.join(os.path.dirname(__file__),"../assets/font-awesome", 'lightbulb-regular.png')).end()
+
