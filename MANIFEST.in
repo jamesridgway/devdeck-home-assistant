@@ -1,1 +1,2 @@
 include devdeck_home_assistant/assets/font-awesome/*
+include requirements.txt
