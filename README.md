@@ -4,7 +4,7 @@
 Home Assistant controls for [DevDeck](https://github.com/jamesridgway/devdeck).
 
 ## Installing
-Simplify install *DevDeck - Home Assistant* into the same python environment that you have installed DevDeck.
+Simply install *DevDeck - Home Assistant* into the same python environment that you have installed DevDeck.
 
     pip install devdeck-home-assistant
 
