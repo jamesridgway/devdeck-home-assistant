@@ -1,39 +1,41 @@
 import os
+
 import requests
 
-from devdeck_core.controls.deck_control import DeckControl
+from .call_service_control import CallServiceControl
 
 
-class LightToggleControl(DeckControl):
+class LightToggleControl(CallServiceControl):
     def __init__(self, key_no, **kwargs):
-        self.headers = {}
         super().__init__(key_no, **kwargs)
-
-    def initialize(self):
-        if 'Authorization' not in self.headers:
-            self.headers['Authorization'] = 'Bearer {}'.format(self.settings['api_key'])
-        self.__render_icon()
-
-    def pressed(self):
-        data = {
-            'entity_id': self.settings['entity_id']
+        self.domain = 'light'
+        self.service = 'toggle'
+        self.service_data = {'entity_id': kwargs['entity_id']}
+        self.state_entity = kwargs['entity_id']
+        fa_dir = os.path.join(os.path.dirname(__file__), "assets/font-awesome")
+        self.state_map = {
+            'on': {'image': os.path.join(fa_dir, 'lightbulb-solid.png')},
+            'off': {'image': os.path.join(fa_dir, 'lightbulb-regular.png')},
         }
-        requests.post(
-            '{}/api/services/light/toggle'.format(self.settings['url']),
-            json=data,
-            headers=self.headers)
-        self.__render_icon()
+        self.dynamic_icon = True
 
-    def __render_icon(self):
-        r = requests.get(
-            '{}/api/states/{}'.format(self.settings['url'], self.settings['entity_id']),
-            headers=self.headers)
-        data = r.json()
-        with self.deck_context() as context:
-            if data['state'] == 'on':
-                with context.renderer() as r:
-                    r.image(os.path.join(os.path.dirname(__file__), "assets/font-awesome", 'lightbulb-solid.png')).end()
-            else:
-                with context.renderer() as r:
-                    r.image(os.path.join(os.path.dirname(__file__), "assets/font-awesome", 'lightbulb-regular.png')).end()
-
+    def settings_schema(self):
+        return {
+            'url': {
+                'type': 'string',
+                'required': True
+            },
+            'api_key': {
+                'type': 'string',
+                'required': True
+            },
+            'entity_id': {
+                'type': 'string',
+                'required': True
+            },
+            'redraw_interval': {
+                'type': 'number',
+                'min': 0.1,
+                'required': False
+            }
+        }
