@@ -38,18 +38,19 @@ Example configuration:
               settings:
                 api_key: 'YOUR_API_KEY_GOES_HERE'
                 entity_id: 'light.your_light_entity_id'
-                url: 'htts://homeassistant:8123'
+                url: 'http://homeassistant:8123'
+                icon: 'lightbulb'
             - name: 'devdeck_home_assistant.switch_toggle_control.SwitchToggleControl'
               key: 1
               settings:
                 api_key: 'YOUR_API_KEY_GOES_HERE'
                 entity_id: 'switch.your_switch_entity_id'
-                url: 'htts://homeassistant:8123'
+                url: 'http://homeassistant:8123'
             - name: 'devdeck_home_assistant.call_service_control.CallServiceControl'
               key: 2
               settings:
                 api_key: 'YOUR_API_KEY_GOES_HERE'
-                url: 'htts://homeassistant:8123'
+                url: 'http://homeassistant:8123'
                 service: scene.turn_on
                 data:
                   entity_id: scene.work_mode
@@ -58,7 +59,7 @@ Example configuration:
               key: 3
               settings:
                 api_key: 'YOUR_API_KEY_GOES_HERE'
-                url: 'htts://homeassistant:8123'
+                url: 'http://homeassistant:8123'
                 service: media_player.media_play_pause
                 data:
                   entity_id: media_player.office_sonos
@@ -74,7 +75,7 @@ Example configuration:
               key: 4
               settings:
                 api_key: 'YOUR_API_KEY_GOES_HERE'
-                url: 'htts://homeassistant:8123'
+                url: 'http://homeassistant:8123'
                 service: script.noop
                 state_entity: media_player.office_sonos
                 state_map:
