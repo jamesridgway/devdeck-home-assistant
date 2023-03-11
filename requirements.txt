@@ -1,5 +1,6 @@
 assertpy==1.1
 devdeck-core==1.0.7
+pillow
 pytest==6.2.1
 requests==2.25.1
 vcrpy==4.1.1
