@@ -12,10 +12,10 @@ class LightToggleControl(CallServiceControl):
         self.service = 'toggle'
         self.service_data = {'entity_id': kwargs['entity_id']}
         self.state_entity = kwargs['entity_id']
-        fa_dir = os.path.join(os.path.dirname(__file__), "assets/font-awesome")
+        mdi_dir = os.path.join(os.path.dirname(__file__), "assets/mdi")
         self.state_map = {
-            'on': {'image': os.path.join(fa_dir, 'lightbulb-solid.png')},
-            'off': {'image': os.path.join(fa_dir, 'lightbulb-regular.png')},
+            'on': {'image': os.path.join(mdi_dir, kwargs['icon'] + '-solid.png')},
+            'off': {'image': os.path.join(mdi_dir, kwargs['icon'] + '-regular.png')},
         }
         self.dynamic_icon = True
 
@@ -37,5 +37,9 @@ class LightToggleControl(CallServiceControl):
                 'type': 'number',
                 'min': 0.1,
                 'required': False
+            },
+            'icon': {
+                'type': 'string',
+                'required': True
             }
         }
