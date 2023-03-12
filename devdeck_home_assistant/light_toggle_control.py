@@ -13,8 +13,19 @@ class LightToggleControl(CallServiceControl):
         self.service_data = {'entity_id': kwargs['entity_id']}
         self.state_entity = kwargs['entity_id']
 
-        on = self.make_image(kwargs['icon'], 'solid', kwargs['text'], kwargs['bg_color'])
-        off = self.make_image(kwargs['icon'], 'regular', kwargs['text'], kwargs['bg_color'])
+        on = self.make_image(
+            kwargs.get('icon', 'lightbulb'),
+            'on', 
+            kwargs.get('text', ''),
+            kwargs.get('bg_color', 'black')
+        )
+
+        off = self.make_image(
+            kwargs.get('icon', 'lightbulb'),
+            'off',
+            kwargs.get('text', ''),
+            kwargs.get('bg_color', 'black')
+        )
 
         self.state_map = {
             'on': {'image': on},
@@ -28,10 +39,17 @@ class LightToggleControl(CallServiceControl):
         font = ImageFont.truetype("Arial.ttf", 80)
         mdi_dir = os.path.join(os.path.dirname(__file__), "assets/mdi")
 
-        img = Image.open(os.path.join(mdi_dir, icon + '-' + state + '.png'))
+        if len(text) > 0:
+            img = Image.open(os.path.join(mdi_dir, icon + '-' + state + '.png'))
+        else:
+            img = Image.open(os.path.join(mdi_dir, icon + '-full-' + state + '.png'))
+
         out = Image.composite(img, bg, img)
-        draw = ImageDraw.Draw(out)
-        draw.text((256, 500), text, fill=(255,255,255,255), anchor=anchor, font=font)
+
+        if len(text) > 0:
+            draw = ImageDraw.Draw(out)
+            draw.text((256, 500), text, fill=(255,255,255,255), anchor=anchor, font=font)
+
         filename = tempfile.NamedTemporaryFile()
         out.save(filename, format="PNG")
         return filename
@@ -44,7 +62,7 @@ class LightToggleControl(CallServiceControl):
             },
             'bg_color': {
                 'type': 'string',
-                'required': True
+                'required': False
             },
             'entity_id': {
                 'type': 'string',
@@ -52,7 +70,7 @@ class LightToggleControl(CallServiceControl):
             },
             'icon': {
                 'type': 'string',
-                'required': True
+                'required': False
             },
             'redraw_interval': {
                 'type': 'number',
@@ -61,7 +79,7 @@ class LightToggleControl(CallServiceControl):
             },
             'text': {
                 'type': 'string',
-                'required': True
+                'required': False
             },
             'url': {
                 'type': 'string',
