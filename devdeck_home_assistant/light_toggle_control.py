@@ -31,7 +31,7 @@ class LightToggleControl(CallServiceControl):
         img = Image.open(os.path.join(mdi_dir, icon + '-' + state + '.png'))
         out = Image.composite(img, bg, img)
         draw = ImageDraw.Draw(out)
-        draw.text((256, 507), text, fill=(255,255,255,255), anchor=anchor, font=font)
+        draw.text((256, 500), text, fill=(255,255,255,255), anchor=anchor, font=font)
         filename = tempfile.NamedTemporaryFile()
         out.save(filename, format="PNG")
         return filename

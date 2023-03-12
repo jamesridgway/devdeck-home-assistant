@@ -40,6 +40,8 @@ Example configuration:
                 entity_id: 'light.your_light_entity_id'
                 url: 'http://homeassistant:8123'
                 icon: 'lightbulb'
+                bg_color: 'black'
+                text: 'Hall'
             - name: 'devdeck_home_assistant.switch_toggle_control.SwitchToggleControl'
               key: 1
               settings:
