@@ -1,3 +1,4 @@
+
 # DevDeck - Home Assistant
 ![CI](https://github.com/jamesridgway/devdeck-home-assistant/workflows/CI/badge.svg?branch=main)
 
@@ -11,6 +12,12 @@ Simply install *DevDeck - Home Assistant* into the same python environment that 
 You can then update your DevDeck configuration to use decks and controls from this package.
 
 ## Controls
+All Controls share the following required settings:
+|  Option Name| Description
+|--|--|
+| api_key | Your long lived access token
+| entity_id | The entity ID from Home Assistant
+| url | The URL to your home assistant installation
 
 * `CallServiceControl`
 
@@ -22,7 +29,13 @@ You can then update your DevDeck configuration to use decks and controls from th
 
 * `LightToggleControl`
 
-   Can be used to toggle the state of a light entity
+   Can be used to toggle the state of a light entity. This control has the following optional configurable settings:
+
+	|  Option Name| Description  |Default Value
+	|--|--|--|
+	| icon | The icon to be displayed | lightbulb
+	| bg_color | Background color | black
+	| text | Short text label
 
 ## Configuration
 
