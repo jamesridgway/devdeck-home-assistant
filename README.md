@@ -35,6 +35,7 @@ All Controls share the following required settings:
 	| icon | The icon to be displayed | lightbulb
 	| bg_color | Background color | black
 	| text | Short text label
+
     The following icons are available, please use the name value from the following table as the icon value in the configuration file:
 
     | Name | Icon Off | Icon On
