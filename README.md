@@ -24,7 +24,20 @@ All Controls share the following required settings:
 
 * `SwitchToggleControl`
 
-   Can be used to toggle the state of a switch entity
+   Can be used to toggle the state of a switch entity. This control has the following optional configurable settings:
+
+	|  Option Name| Description  |Default Value
+	|--|--|--|
+	| icon | The icon to be displayed | toggle-switch-outline
+	| bg_color | Background color | black
+	| text | Short text label
+
+  The following icons are available, please use the name value from the following table as the icon value in the configuration file:
+
+    | Name | Icon Off | Icon On
+    |--|--|--
+    | toggle-switch | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/toggle-switch-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/toggle-switch-on.png" width="100" height="100" />
+    | toggle-switch-outline | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/toggle-switch-outline-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/toggle-switch-outline-on.png" width="100" height="100" />
 
 * `LightToggleControl`
 
@@ -35,7 +48,7 @@ All Controls share the following required settings:
 	| icon | The icon to be displayed | lightbulb
 	| bg_color | Background color | black
 	| text | Short text label
-
+	
     The following icons are available, please use the name value from the following table as the icon value in the configuration file:
 
     | Name | Icon Off | Icon On
