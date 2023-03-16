@@ -1,4 +1,3 @@
-
 # DevDeck - Home Assistant
 ![CI](https://github.com/jamesridgway/devdeck-home-assistant/workflows/CI/badge.svg?branch=main)
 
@@ -36,6 +35,19 @@ All Controls share the following required settings:
 	| icon | The icon to be displayed | lightbulb
 	| bg_color | Background color | black
 	| text | Short text label
+
+    The following icons are available, please use the name value from the following table as the icon value in the configuration file:
+
+    | Name | Icon Off | Icon On
+    |--|--|--
+    | ceiling-light | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/ceiling-light-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/ceiling-light-full-on.png" width="100" height="100" /> 
+    | desk-lamp | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/desk-lamp-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/desk-lamp-full-on.png" width="100" height="100" /> 
+    | floor-lamp | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/floor-lamp-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/floor-lamp-full-on.png" width="100" height="100" /> 
+    | globe-light | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/globe-light-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/globe-light-full-on.png" width="100" height="100" /> 
+    | lamp | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/lamp-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/lamp-full-on.png" width="100" height="100" /> 
+    | led-strip | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/led-strip-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/led-strip-full-on.png" width="100" height="100" /> 
+    | led-strip-variant | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/led-strip-variant-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/led-strip-variant-full-on.png" width="100" height="100" /> 
+    | lightbulb | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/lightbulb-full-off.png" width="100" height="100" /> | <img src="https://github.com/timtimellis/devdeck-home-assistant/raw/fiddle/devdeck_home_assistant/assets/mdi/lightbulb-full-on.png" width="100" height="100" /> 
 
 ## Configuration
 
