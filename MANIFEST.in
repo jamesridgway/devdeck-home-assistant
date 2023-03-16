@@ -1,3 +1,4 @@
 include devdeck_home_assistant/assets/font-awesome/*
 include devdeck_home_assistant/assets/mdi/*
+include devdeck_home_assistant/assets/roboto/*
 include requirements.txt

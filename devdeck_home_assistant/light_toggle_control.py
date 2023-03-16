@@ -34,22 +34,18 @@ class LightToggleControl(CallServiceControl):
         self.dynamic_icon = True
 
     def make_image(self, icon, state, text, bg_color):
-        anchor = "mb"
         bg = Image.new('RGBA', (512, 512), bg_color)
-        font = ImageFont.truetype("Arial.ttf", 80)
+        font = ImageFont.truetype(os.path.join(os.path.dirname(__file__), "assets/roboto", 'Roboto-Regular.ttf'), 80)
         mdi_dir = os.path.join(os.path.dirname(__file__), "assets/mdi")
 
         if len(text) > 0:
             img = Image.open(os.path.join(mdi_dir, icon + '-' + state + '.png'))
+            draw = ImageDraw.Draw(img)
+            draw.text((256, 500), text, fill=(255,255,255,255), anchor='mb', font=font)
         else:
             img = Image.open(os.path.join(mdi_dir, icon + '-full-' + state + '.png'))
 
         out = Image.composite(img, bg, img)
-
-        if len(text) > 0:
-            draw = ImageDraw.Draw(out)
-            draw.text((256, 500), text, fill=(255,255,255,255), anchor=anchor, font=font)
-
         filename = tempfile.NamedTemporaryFile()
         out.save(filename, format="PNG")
         return filename
